@@ -5,9 +5,29 @@ metadata:
   namespace: ingress-nginx
 spec:
   selector:
-    app: dev-ingress
+    app: ingress-nginx # Make sure this matches the label of the Ingress Controller pods
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
   type: LoadBalancer
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dev-ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: react.taggrs.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: react-frontend
+                port:
+                  number: 80
