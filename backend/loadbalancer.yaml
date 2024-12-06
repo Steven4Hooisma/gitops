@@ -5,7 +5,7 @@ metadata:
   namespace: ingress-nginx
 spec:
   selector:
-    app.kubernetes.io/name: ingress-nginx
+    app: dev-ingress
   ports:
     - protocol: TCP
       port: 80
