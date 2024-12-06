@@ -1,19 +1,19 @@
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
-  name: my-app
+  name: react-frontend
 spec: 
   replicas: 1
   selector: 
     matchLabels:
-      app: my-app 
+      app: react-frontend 
   template: 
     metadata:
       labels:
-        app: my-app
+        app: react-frontend
     spec:
       containers:
-        - name: my-app
+        - name: react-frontend
           image: 16dag16e/react:latest
       imagePullSecrets:
         - name: my-registry-secret
