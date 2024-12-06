@@ -1,1 +1,12 @@
-
+apiVersion: v1
+kind: Service
+metadata:
+  name: dev-loadbalancer
+spec:
+  selector:
+    app: dev-ingress
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
