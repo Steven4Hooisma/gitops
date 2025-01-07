@@ -20,3 +20,5 @@ spec:
       containers:
         - name: taggrs-dashboard
           image: 16dag16e/taggrs-dashboard:acceptance-0.1.59 # Initial version
+      imagePullSecrets:
+        - name: dockerhub-secret
