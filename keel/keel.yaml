@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: keel
-          image: keel:latest
+          image: keelorg/keel:latest
           env:
             - name: KEEL_WEBHOOK_TOKEN
               value: "your-webhook-token" # Change this to a secure token
