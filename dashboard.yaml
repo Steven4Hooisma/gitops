@@ -21,6 +21,8 @@ spec:
         - name: taggrs-dashboard
           image: 16dag16e/taggrs-dashboard:acceptance-0.1.59 # Initial version
           imagePullPolicy: Always  # Ensure the image is pulled from the registry
+          ports:
+            - containerPort: 3000
       imagePullSecrets:
         - name: dockerhub-secret    # Docker Hub secret for private repository access
 ---
@@ -37,7 +39,4 @@ spec:
     - name: http        # Added name for the port
       protocol: TCP
       port: 80          # The port on which the service will be accessible
-      targetPort: 80    # The port on the container to forward traffic to
-
-
-
+      targetPort: 3000    # The port on the container to forward traffic to
