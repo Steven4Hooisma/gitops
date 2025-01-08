@@ -37,6 +37,5 @@ spec:
     - protocol: TCP
       port: 80        # The port on which the service will be accessible
       targetPort: 80  # The port on the container to forward traffic to
-  type: ClusterIP      # Default service type
 
 
