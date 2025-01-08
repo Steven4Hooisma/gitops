@@ -34,9 +34,10 @@ spec:
   selector:
     app: taggrs-dashboard
   ports:
-    - name: http
+    - name: http        # Added name for the port
       protocol: TCP
-      port: 80        # The port on which the service will be accessible
-      targetPort: 80  # The port on the container to forward traffic to
+      port: 80          # The port on which the service will be accessible
+      targetPort: 80    # The port on the container to forward traffic to
+
 
 
