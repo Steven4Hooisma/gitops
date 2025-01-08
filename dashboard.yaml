@@ -60,4 +60,4 @@ spec:
           service:
             name: taggrs-dashboard
             port:
-              number: 80
+              number: 3000
