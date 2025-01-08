@@ -23,3 +23,18 @@ spec:
           imagePullPolicy: Always  # Ensure the image is pulled from the registry
       imagePullSecrets:
         - name: dockerhub-secret    # Docker Hub secret for private repository access
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: taggrs-dashboard-service
+  namespace: default
+spec:
+  selector:
+    app: taggrs-dashboard
+  ports:
+    - protocol: TCP
+      port: 80        # The port on which the service will be accessible
+      targetPort: 80  # The port on the container to forward traffic to
+  type: ClusterIP      # Default service type
+
