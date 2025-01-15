@@ -4,6 +4,8 @@ metadata:
   name: taggrs-ingress
   annotations:
     kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      add_header X-Custom-Header "HelloWorld";
 spec:
   rules:
   - host: dashboard.taggrs.dev
