@@ -5,7 +5,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: default
-    namespace: keel
+    namespace: default
 roleRef:
   kind: ClusterRole
   name: keel-clusterrole
