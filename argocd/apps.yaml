@@ -4,13 +4,13 @@ metadata:
   name: apps
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: 16dag16e/taggrs-dashboard:~acceptance-0.1
+    argocd-image-updater.argoproj.io/image-list: 16dag16e/taggrs-dashboard:~acceptance-0.1.*
 spec:
   project: default
   source:
     repoURL: https://github.com/Steven4Hooisma/gitops.git
     targetRevision: main
-    path: ./apps/dashboard
+    path: apps/dashboard
   destination:
     server: https://kubernetes.default.svc
     namespace: default
