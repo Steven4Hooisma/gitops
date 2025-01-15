@@ -6,3 +6,6 @@ rules:
   - apiGroups: ["batch"]
     resources: ["cronjobs"]
     verbs: ["list", "watch"]
+  - apiGroups: ["apps"]
+    resources: ["statefulsets"]
+    verbs: ["list", "watch"]
