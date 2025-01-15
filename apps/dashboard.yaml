@@ -31,10 +31,8 @@ kind: Service
 metadata:
   name: taggrs-dashboard-service
   namespace: default
-  annotations:
-    service.beta.kubernetes.io/load-balancer-source-ranges: 93.119.10.58/32
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: taggrs-dashboard
   ports:
