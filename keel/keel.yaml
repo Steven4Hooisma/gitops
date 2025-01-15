@@ -13,9 +13,6 @@ spec:
       labels:
         app: keel
     spec:
-      template:
-        spec:
-          serviceAccountName: keel
       containers:
         - name: keel
           image: keelhq/keel:latest

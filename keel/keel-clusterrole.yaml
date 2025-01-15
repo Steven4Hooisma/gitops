@@ -7,5 +7,5 @@ rules:
     resources: ["cronjobs"]
     verbs: ["list", "watch"]
   - apiGroups: ["apps"]
-    resources: ["statefulsets", "daemonsets", "deployments"]
-    verbs: ["list", "watch"]
+    resources: ["*"]      # Access all resources in the "apps" API group
+    verbs: ["list", "get", "create", "update", "patch", "delete", "watch"]
