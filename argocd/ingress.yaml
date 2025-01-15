@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/Steven4Hooisma/repo1.git
     targetRevision: main
-    path: nginx-ingress
+    path: ./nginx-ingress
   destination:
     server: https://kubernetes.default.svc
     namespace: nginx-ingress

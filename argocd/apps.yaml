@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/Steven4Hooisma/repo1.git
     targetRevision: main
-    path: apps
+    path: ./apps
   destination:
     server: https://kubernetes.default.svc
     namespace: apps-namespace
