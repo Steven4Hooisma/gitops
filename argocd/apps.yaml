@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/Steven4Hooisma/gitops.git
     targetRevision: main
-    path: ./apps
+    path: ./apps/dashboard
     directory:
       recurse: true
       jsonnet: {}
