@@ -6,9 +6,6 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: "16dag16e/taggrs-dashboard=16dag16e/taggrs-dashboard:acceptance-0.1.59"
     argocd-image-updater.argoproj.io/enable: "true"
-    # keel.sh/policy: all               # Update for minor and patch-level updates
-    # keel.sh/tag: semver               # Use semantic versioning
-    # keel.sh/pollSchedule: "@every 1h" # Poll every hour
 spec:
   replicas: 2
   selector:
