@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/Steven4Hooisma/repo1.git
+    repoURL: https://github.com/Steven4Hooisma/gitops.git
     targetRevision: main
     path: ./bootstrap
   destination:
