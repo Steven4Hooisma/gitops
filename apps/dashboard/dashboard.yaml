@@ -4,7 +4,7 @@ metadata:
   name: taggrs-dashboard
   namespace: default
   annotations:
-    argocd-image-updater.argoproj.io/image-list: "16dag16e/taggrs-dashboard=16dag16e/taggrs-dashboard:acceptance-0.1.59"
+    argocd-image-updater.argoproj.io/image-list: 16dag16e/taggrs-dashboard:^acceptance-0.1.59
     argocd-image-updater.argoproj.io/enable: "true"
 spec:
   replicas: 2
