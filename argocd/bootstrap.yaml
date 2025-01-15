@@ -11,7 +11,7 @@ spec:
     path: ./bootstrap
   destination:
     server: https://kubernetes.default.svc
-    namespace: bootstrap
+    namespace: default
   syncPolicy:
     automated:
       prune: true
