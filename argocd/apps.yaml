@@ -9,6 +9,9 @@ spec:
     repoURL: https://github.com/Steven4Hooisma/gitops.git
     targetRevision: main
     path: ./apps
+    directory:
+      recurse: true
+      jsonnet: {}
   destination:
     server: https://kubernetes.default.svc
     namespace: apps-namespace
