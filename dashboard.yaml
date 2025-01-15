@@ -42,22 +42,3 @@ spec:
       protocol: TCP
       port: 80          # The port on which the service will be accessible
       targetPort: 3000    # The port on the container to forward traffic to
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: taggrs-dashboard-ingress
-  annotations:
-    kubernetes.io/ingress.class: "nginx"
-spec:
-  rules:
-  - host: ingress.taggrs.dev
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: taggrs-dashboard-service
-            port:
-              number: 80
