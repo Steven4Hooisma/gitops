@@ -16,5 +16,6 @@ spec:
         backend:
           service:
             name: taggrs-dashboard-service
+            namespace: default
             port:
               number: 80
