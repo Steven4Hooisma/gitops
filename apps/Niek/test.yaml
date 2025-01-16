@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: niek-dashboard
+  namespace: default
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: 16dag16e/taggrs-dashboard:^acceptance-0.1.59
+    argocd-image-updater.argoproj.io/enable: "true"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: niek-dashboard
+  template:
+    metadata:
+      labels:
+        app: niek-dashboard
+    spec:
+      containers:
+        - name: niek-dashboard
+          image: 16dag16e/taggrs-dashboard:latest # Initial version
+          imagePullPolicy: Always  # Ensure the image is pulled from the registry
+          ports:
+            - containerPort: 3000
+      imagePullSecrets:
+        - name: dockerhub-secret    # Docker Hub secret for private repository access
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: niek-dashboard-service
+  namespace: default
+spec:
+  type: ClusterIP
+  selector:
+    app: niek-dashboard
+  ports:
+    - name: http        # Added name for the port
+      protocol: TCP
+      port: 80          # The port on which the service will be accessible
+      targetPort: 3000    # The port on the container to forward traffic to
