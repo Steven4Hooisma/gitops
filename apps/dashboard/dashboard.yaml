@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: taggrs-dashboard
-          image: 16dag16e/taggrs-dashboard:acceptance-0.1.59 # Initial version
+          image: 16dag16e/taggrs-dashboard:latest # Initial version
           imagePullPolicy: Always  # Ensure the image is pulled from the registry
           ports:
             - containerPort: 3000
