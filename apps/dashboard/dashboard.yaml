@@ -4,7 +4,7 @@ metadata:
   name: taggrs-dashboard
   namespace: default
   annotations:
-    argocd-image-updater.argoproj.io/image-list: 16dag16e/taggrs-dashboard:^acceptance-0.1.59
+    argocd-image-updater.argoproj.io/image-list: 16dag16e/taggrs-dashboard:^acceptance-0.1.78
     argocd-image-updater.argoproj.io/enable: "true"
 spec:
   replicas: 10
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: taggrs-dashboard
-          image: 16dag16e/taggrs-dashboard:latest # Initial version
+          image: 16dag16e/taggrs-dashboard:acceptance-0.1.78 # Initial version
           imagePullPolicy: Always  # Ensure the image is pulled from the registry
           ports:
             - containerPort: 3000
