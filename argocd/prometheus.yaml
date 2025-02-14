@@ -16,7 +16,12 @@ spec:
     chart: kube-prometheus-stack
     helm:
       values: |
-        # Customize values.yaml if needed
+        ingress:
+          enabled: true
+          annotations:
+            kubernetes.io/ingress.class: nginx
+          hosts:
+            - prometheus.taggrs.dev
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
