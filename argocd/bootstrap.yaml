@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/Steven4Hooisma/gitops.git
     targetRevision: main
-    path: bootstrap/monitoring
+    path: ./bootstrap/monitoring
   syncPolicy:
     automated:
       prune: true
