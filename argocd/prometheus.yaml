@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     repoURL: 'https://prometheus-community.github.io/helm-charts'
-    targetRevision: 'v27.3.1'  # Use a valid release version of the Prometheus Helm chart
+    targetRevision: '27.3.1'  # Use a valid release version of the Prometheus Helm chart
     chart: kube-prometheus-stack
     helm:
       values: |
