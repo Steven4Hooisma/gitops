@@ -4,17 +4,14 @@ metadata:
   name: bootstrap
   namespace: argocd
 spec:
+  destination:
+    namespace: bootstrap
+    server: https://kubernetes.default.svc
   project: default
   source:
     repoURL: https://github.com/Steven4Hooisma/gitops.git
     targetRevision: main
-    path: ./bootstrap
-    directory:
-      recurse: true
-      jsonnet: {}
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: argocd
+    path: bootstrap/monitoring
   syncPolicy:
     automated:
       prune: true
