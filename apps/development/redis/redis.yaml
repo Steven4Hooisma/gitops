@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/Steven4Hooisma/gitops.git  # Your Git repository URL
     targetRevision: HEAD  # Track the latest commit
-    path: apps/development/redis  # The path to the `dev` environment folder in your repo
+    path: ./platform/redis  # The path to the `dev` environment folder in your repo
   syncPolicy:
     automated:
       prune: true  # Automatically remove resources that are no longer in the Git repo
