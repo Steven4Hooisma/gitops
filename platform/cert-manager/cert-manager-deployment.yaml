@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
         - name: cert-manager-dev
-          image: quay.io/jetstack/cert-manager-controller:v1.17.1  # Change this to your image
+          image: cert-manager:latest  # Change this to your image
