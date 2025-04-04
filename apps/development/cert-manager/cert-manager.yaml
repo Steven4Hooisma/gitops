@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cert-manager-dev
+  namespace: argocd
+spec:
+  destination:
+    namespace: cert-manager  # Deploy Cert-Manager in its own namespace
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    repoURL: https://github.com/Steven4Hooisma/gitops.git  # Your Git repository URL
+    targetRevision: HEAD
+    path: ./platform/cert-manager  # Path to the `dev` environment folder
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
