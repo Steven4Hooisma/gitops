@@ -2,8 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis
+  labels:
+    app: redis
 spec:
-  replicas: 1
+  replicas: 1  # Number of Redis replicas
   selector:
     matchLabels:
       app: redis
@@ -14,6 +16,13 @@ spec:
     spec:
       containers:
         - name: redis
-          image: redis:latest
+          image: redis:latest  # You can pin this to a specific version (e.g., redis:6.2)
           ports:
             - containerPort: 6379
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
