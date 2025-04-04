@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: redis-dev
+  namespace: argocd
+spec:
+  destination:
+    namespace: default  # The namespace where Redis will be deployed
+    server: https://kubernetes.default.svc  # The Kubernetes API server address
+  project: default  # The ArgoCD project
+  source:
+    repoURL: https://github.com/Steven4Hooisma/gitops.git  # Your Git repository URL
+    targetRevision: HEAD  # Track the latest commit
+    path: apps/development/redis  # The path to the `dev` environment folder in your repo
+  syncPolicy:
+    automated:
+      prune: true  # Automatically remove resources that are no longer in the Git repo
+      selfHeal: true  # Automatically correct any drift between Git and the cluster
